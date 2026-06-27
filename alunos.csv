@@ -1,0 +1,102 @@
+ra_num,ra,nome,nome_curto,curso,periodo,campus,senha_hash,ativo,fichas_almoco,fichas_jantar
+2830001,a02830001,HENRIQUE ALMEIDA SOUZA,Henrique Almeida,Tecnologia em Fabricação Mecânica,5º Período,Ponta Grossa,1234,1,0,0
+2830002,a02830002,YASMIN VIEIRA COSTA,Yasmin Vieira,Engenharia de Bioprocessos e Biotecnologia,7º Período,Ponta Grossa,1234,0,0,0
+2830003,a02830003,BRUNO CUNHA MACEDO,Bruno Cunha,Ciência da Computação,4º Período,Ponta Grossa,1234,1,4,3
+2830004,a02830004,ANDRÉ MARTINS CAVALCANTI,André Martins,Engenharia Mecânica,5º Período,Ponta Grossa,1234,1,0,0
+2830005,a02830005,CLÁUDIO MOURA MOREIRA,Cláudio Moura,Engenharia Elétrica,3º Período,Ponta Grossa,1234,1,5,1
+2830006,a02830006,LUCAS COSTA FREITAS,Lucas Costa,Engenharia Elétrica,6º Período,Ponta Grossa,1234,1,3,1
+2830007,a02830007,JOÃO DIAS VIEIRA,João Dias,Engenharia de Produção,7º Período,Ponta Grossa,1234,1,1,3
+2830008,a02830008,ALINE FARIAS CARVALHO,Aline Farias,Engenharia de Bioprocessos e Biotecnologia,2º Período,Ponta Grossa,1234,0,0,1
+2830009,a02830009,BEATRIZ MARTINS RODRIGUES,Beatriz Martins,Tecnologia em Fabricação Mecânica,5º Período,Ponta Grossa,1234,1,5,1
+2830010,a02830010,GUSTAVO BARROS CORREIA,Gustavo Barros,Tecnologia em Análise e Desenvolvimento de Sistemas,5º Período,Ponta Grossa,1234,1,4,0
+2830011,a02830011,IGOR ARAÚJO VIEIRA,Igor Araújo,Engenharia de Bioprocessos e Biotecnologia,4º Período,Ponta Grossa,1234,1,2,1
+2830012,a02830012,HENRIQUE REIS MARTINS,Henrique Reis,Tecnologia em Automação Industrial,6º Período,Ponta Grossa,1234,1,5,0
+2830013,a02830013,BRUNO SANTOS TEIXEIRA,Bruno Santos,Engenharia Química,5º Período,Ponta Grossa,1234,1,3,1
+2830014,a02830014,CAMILA CAMPOS BARBOSA,Camila Campos,Ciência da Computação,8º Período,Ponta Grossa,1234,1,0,0
+2830015,a02830015,AMANDA REIS VIEIRA,Amanda Reis,Ciência da Computação,7º Período,Ponta Grossa,1234,1,2,1
+2830016,a02830016,BRUNO NASCIMENTO CUNHA,Bruno Nascimento,Engenharia de Bioprocessos e Biotecnologia,2º Período,Ponta Grossa,1234,1,5,0
+2830017,a02830017,FERNANDA ARAÚJO MOURA,Fernanda Araújo,Engenharia Elétrica,2º Período,Ponta Grossa,1234,1,3,2
+2830018,a02830018,DÉBORA RIBEIRO REIS,Débora Ribeiro,Engenharia Elétrica,2º Período,Ponta Grossa,1234,1,3,1
+2830019,a02830019,ELIANE MOREIRA ALMEIDA,Eliane Moreira,Tecnologia em Análise e Desenvolvimento de Sistemas,7º Período,Ponta Grossa,1234,1,0,1
+2830020,a02830020,LEONARDO FERNANDES CUNHA,Leonardo Fernandes,Tecnologia em Automação Industrial,5º Período,Ponta Grossa,1234,1,3,3
+2830021,a02830021,FELIPE LIMA BARROS,Felipe Lima,Ciência da Computação,1º Período,Ponta Grossa,1234,1,2,0
+2830022,a02830022,MARIANA BARROS CARDOSO,Mariana Barros,Tecnologia em Análise e Desenvolvimento de Sistemas,1º Período,Ponta Grossa,1234,1,3,0
+2830023,a02830023,BEATRIZ CAMPOS PEREIRA,Beatriz Campos,Engenharia Elétrica,3º Período,Ponta Grossa,1234,1,2,3
+2830024,a02830024,GUSTAVO RIBEIRO PIRES,Gustavo Ribeiro,Tecnologia em Fabricação Mecânica,7º Período,Ponta Grossa,1234,1,3,0
+2830025,a02830025,ISABELA CARDOSO BARBOSA,Isabela Cardoso,Tecnologia em Análise e Desenvolvimento de Sistemas,6º Período,Ponta Grossa,1234,1,3,2
+2830026,a02830026,MARIANA ROCHA MARTINS,Mariana Rocha,Engenharia Química,6º Período,Ponta Grossa,1234,0,3,0
+2830027,a02830027,NATÁLIA MARTINS SILVA,Natália Martins,Engenharia Elétrica,1º Período,Ponta Grossa,1234,1,0,1
+2830028,a02830028,PEDRO CUNHA ROCHA,Pedro Cunha,Licenciatura em Ciências Biológicas,8º Período,Ponta Grossa,1234,1,0,3
+2830029,a02830029,CAIO CASTRO ROCHA,Caio Castro,Tecnologia em Automação Industrial,7º Período,Ponta Grossa,1234,1,0,2
+2830030,a02830030,RODRIGO MOURA PINTO,Rodrigo Moura,Engenharia Mecânica,1º Período,Ponta Grossa,1234,1,4,0
+2830031,a02830031,CARLA BARBOSA MOREIRA,Carla Barbosa,Ciência da Computação,4º Período,Ponta Grossa,1234,1,3,2
+2830032,a02830032,RAFAEL MOURA FERNANDES,Rafael Moura,Engenharia de Produção,8º Período,Ponta Grossa,1234,1,0,2
+2830033,a02830033,SABRINA RODRIGUES OLIVEIRA,Sabrina Rodrigues,Engenharia Química,1º Período,Ponta Grossa,1234,1,5,0
+2830034,a02830034,GUSTAVO PINTO CAMPOS,Gustavo Pinto,Engenharia Mecatrônica,4º Período,Ponta Grossa,1234,1,0,0
+2830035,a02830035,VINÍCIUS SILVA FREITAS,Vinícius Silva,Engenharia Mecânica,8º Período,Ponta Grossa,1234,1,4,3
+2830036,a02830036,OTÁVIO CAMPOS LIMA,Otávio Campos,Engenharia de Produção,5º Período,Ponta Grossa,1234,1,0,3
+2830037,a02830037,AMANDA VIEIRA OLIVEIRA,Amanda Vieira,Engenharia Elétrica,6º Período,Ponta Grossa,1234,1,3,2
+2830038,a02830038,LEONARDO PIRES ARAÚJO,Leonardo Pires,Engenharia Mecatrônica,2º Período,Ponta Grossa,1234,1,0,3
+2830039,a02830039,PEDRO ROCHA BARBOSA,Pedro Rocha,Engenharia de Bioprocessos e Biotecnologia,4º Período,Ponta Grossa,1234,1,0,3
+2830040,a02830040,BEATRIZ PINTO AZEVEDO,Beatriz Pinto,Engenharia de Bioprocessos e Biotecnologia,6º Período,Ponta Grossa,1234,1,0,1
+2830041,a02830041,LETÍCIA RIBEIRO BARBOSA,Letícia Ribeiro,Engenharia Química,5º Período,Ponta Grossa,1234,1,5,0
+2830042,a02830042,MARCOS DIAS BORGES,Marcos Dias,Engenharia de Bioprocessos e Biotecnologia,2º Período,Ponta Grossa,1234,1,0,3
+2830043,a02830043,DIEGO NASCIMENTO CORREIA,Diego Nascimento,Engenharia Mecatrônica,4º Período,Ponta Grossa,1234,1,0,2
+2830044,a02830044,MATHEUS CARDOSO BORGES,Matheus Cardoso,Engenharia Mecatrônica,1º Período,Ponta Grossa,1234,1,3,1
+2830045,a02830045,OTÁVIO RODRIGUES NASCIMENTO,Otávio Rodrigues,Tecnologia em Automação Industrial,2º Período,Ponta Grossa,1234,1,4,3
+2830046,a02830046,FERNANDA ALVES MONTEIRO,Fernanda Alves,Engenharia Mecânica,4º Período,Ponta Grossa,1234,1,0,1
+2830047,a02830047,LEONARDO CAMPOS RIBEIRO,Leonardo Campos,Ciência da Computação,2º Período,Ponta Grossa,1234,1,5,1
+2830048,a02830048,JOÃO SILVA MOREIRA,João Silva,Licenciatura em Ciências Biológicas,5º Período,Ponta Grossa,1234,1,2,3
+2830049,a02830049,ISABELA MOURA REIS,Isabela Moura,Tecnologia em Análise e Desenvolvimento de Sistemas,2º Período,Ponta Grossa,1234,1,4,0
+2830050,a02830050,MATHEUS SANTOS BARROS,Matheus Santos,Engenharia de Bioprocessos e Biotecnologia,3º Período,Ponta Grossa,1234,1,0,1
+2830051,a02830051,ALINE SANTOS CORREIA,Aline Santos,Engenharia Química,4º Período,Ponta Grossa,1234,1,1,3
+2830052,a02830052,ANDRÉ BORGES LIMA,André Borges,Engenharia de Bioprocessos e Biotecnologia,3º Período,Ponta Grossa,1234,1,5,0
+2830053,a02830053,ANDRÉ SOUZA FERNANDES,André Souza,Tecnologia em Análise e Desenvolvimento de Sistemas,6º Período,Ponta Grossa,1234,1,2,0
+2830054,a02830054,PATRÍCIA ARAÚJO RODRIGUES,Patrícia Araújo,Engenharia Mecânica,1º Período,Ponta Grossa,1234,1,0,0
+2830055,a02830055,TATIANE CORREIA CARDOSO,Tatiane Correia,Tecnologia em Fabricação Mecânica,4º Período,Ponta Grossa,1234,0,0,2
+2830056,a02830056,VANESSA ALVES PEREIRA,Vanessa Alves,Tecnologia em Automação Industrial,6º Período,Ponta Grossa,1234,1,2,3
+2830057,a02830057,VANESSA SOUZA ALMEIDA,Vanessa Souza,Engenharia Mecatrônica,3º Período,Ponta Grossa,1234,1,1,0
+2830058,a02830058,LUCAS MACEDO MOURA,Lucas Macedo,Tecnologia em Automação Industrial,6º Período,Ponta Grossa,1234,1,3,0
+2830059,a02830059,VINÍCIUS FARIAS CARVALHO,Vinícius Farias,Engenharia Elétrica,1º Período,Ponta Grossa,1234,1,0,3
+2830060,a02830060,MATHEUS CARVALHO BARROS,Matheus Carvalho,Engenharia de Bioprocessos e Biotecnologia,2º Período,Ponta Grossa,1234,1,1,3
+2830061,a02830061,EDUARDO ALMEIDA CARDOSO,Eduardo Almeida,Ciência da Computação,5º Período,Ponta Grossa,1234,1,1,2
+2830062,a02830062,CLÁUDIO MONTEIRO REIS,Cláudio Monteiro,Tecnologia em Fabricação Mecânica,4º Período,Ponta Grossa,1234,1,2,0
+2830063,a02830063,CAROLINA FARIAS CARDOSO,Carolina Farias,Engenharia Elétrica,1º Período,Ponta Grossa,1234,1,0,2
+2830064,a02830064,NATÁLIA MACEDO TEIXEIRA,Natália Macedo,Engenharia Mecânica,8º Período,Ponta Grossa,1234,1,0,3
+2830065,a02830065,DANIEL ARAÚJO COSTA,Daniel Araújo,Engenharia de Bioprocessos e Biotecnologia,6º Período,Ponta Grossa,1234,1,5,0
+2830066,a02830066,YASMIN CARDOSO MARTINS,Yasmin Cardoso,Engenharia Elétrica,3º Período,Ponta Grossa,1234,0,0,2
+2830067,a02830067,CAROLINA PEREIRA DIAS,Carolina Pereira,Engenharia de Bioprocessos e Biotecnologia,4º Período,Ponta Grossa,1234,1,2,2
+2830068,a02830068,BIANCA ROCHA LIMA,Bianca Rocha,Engenharia Química,1º Período,Ponta Grossa,1234,1,5,0
+2830069,a02830069,ELIANE MOURA MARTINS,Eliane Moura,Engenharia Mecânica,8º Período,Ponta Grossa,1234,1,0,0
+2830070,a02830070,TATIANE NASCIMENTO DIAS,Tatiane Nascimento,Licenciatura em Ciências Biológicas,6º Período,Ponta Grossa,1234,1,2,3
+2830071,a02830071,RICARDO CUNHA MOURA,Ricardo Cunha,Tecnologia em Fabricação Mecânica,8º Período,Ponta Grossa,1234,1,4,2
+2830072,a02830072,GABRIEL RIBEIRO ROCHA,Gabriel Ribeiro,Engenharia Mecatrônica,5º Período,Ponta Grossa,1234,1,3,2
+2830073,a02830073,HENRIQUE ROCHA ALVES,Henrique Rocha,Engenharia de Produção,2º Período,Ponta Grossa,1234,1,0,1
+2830074,a02830074,VANESSA TEIXEIRA VIEIRA,Vanessa Teixeira,Engenharia Mecatrônica,3º Período,Ponta Grossa,1234,1,2,0
+2830075,a02830075,ISABELA GOMES PEREIRA,Isabela Gomes,Engenharia Mecatrônica,7º Período,Ponta Grossa,1234,1,2,2
+2830076,a02830076,CARLA GOMES PINTO,Carla Gomes,Engenharia Elétrica,1º Período,Ponta Grossa,1234,1,5,3
+2830077,a02830077,VINÍCIUS CASTRO SILVA,Vinícius Castro,Tecnologia em Fabricação Mecânica,5º Período,Ponta Grossa,1234,1,5,2
+2830078,a02830078,MATHEUS VIEIRA MACEDO,Matheus Vieira,Engenharia Mecânica,8º Período,Ponta Grossa,1234,1,2,2
+2830079,a02830079,ANA FREITAS MOREIRA,Ana Freitas,Tecnologia em Fabricação Mecânica,7º Período,Ponta Grossa,1234,1,5,2
+2830080,a02830080,RAFAEL BORGES VIEIRA,Rafael Borges,Tecnologia em Fabricação Mecânica,7º Período,Ponta Grossa,1234,1,4,0
+2830081,a02830081,BEATRIZ MOURA NASCIMENTO,Beatriz Moura,Engenharia de Bioprocessos e Biotecnologia,3º Período,Ponta Grossa,1234,1,2,1
+2830082,a02830082,CAMILA DIAS TEIXEIRA,Camila Dias,Tecnologia em Automação Industrial,7º Período,Ponta Grossa,1234,1,5,2
+2830083,a02830083,DIEGO COSTA CASTRO,Diego Costa,Tecnologia em Fabricação Mecânica,1º Período,Ponta Grossa,1234,1,1,0
+2830084,a02830084,VITÓRIA PEREIRA SANTOS,Vitória Pereira,Engenharia de Produção,4º Período,Ponta Grossa,1234,1,0,3
+2830085,a02830085,FERNANDA ROCHA NASCIMENTO,Fernanda Rocha,Tecnologia em Análise e Desenvolvimento de Sistemas,2º Período,Ponta Grossa,1234,1,0,2
+2830086,a02830086,CLÁUDIO RIBEIRO BARROS,Cláudio Ribeiro,Engenharia Elétrica,2º Período,Ponta Grossa,1234,1,0,1
+2830087,a02830087,LUCAS AZEVEDO SOUZA,Lucas Azevedo,Engenharia de Produção,7º Período,Ponta Grossa,1234,1,4,0
+2830088,a02830088,PEDRO AZEVEDO ROCHA,Pedro Azevedo,Licenciatura em Ciências Biológicas,5º Período,Ponta Grossa,1234,1,3,0
+2830089,a02830089,CAIO SANTOS CORREIA,Caio Santos,Engenharia Química,7º Período,Ponta Grossa,1234,1,0,3
+2830090,a02830090,VITÓRIA MOREIRA SILVA,Vitória Moreira,Engenharia Mecânica,8º Período,Ponta Grossa,1234,1,1,2
+2830091,a02830091,ISABELA LIMA MOURA,Isabela Lima,Tecnologia em Fabricação Mecânica,5º Período,Ponta Grossa,1234,1,3,2
+2830092,a02830092,TATIANE MOURA AZEVEDO,Tatiane Moura,Tecnologia em Análise e Desenvolvimento de Sistemas,6º Período,Ponta Grossa,1234,1,5,0
+2830093,a02830093,PATRÍCIA CAVALCANTI ROCHA,Patrícia Cavalcanti,Engenharia Elétrica,7º Período,Ponta Grossa,1234,1,2,1
+2830094,a02830094,JULIANA CAMPOS GOMES,Juliana Campos,Tecnologia em Fabricação Mecânica,5º Período,Ponta Grossa,1234,1,3,1
+2830095,a02830095,SABRINA SILVA PIRES,Sabrina Silva,Engenharia Mecatrônica,2º Período,Ponta Grossa,1234,1,2,2
+2830096,a02830096,SABRINA ROCHA CASTRO,Sabrina Rocha,Ciência da Computação,8º Período,Ponta Grossa,1234,1,0,0
+2830097,a02830097,THIAGO MARTINS BARBOSA,Thiago Martins,Engenharia Elétrica,4º Período,Ponta Grossa,1234,1,3,1
+2830098,a02830098,DANIEL REIS PIRES,Daniel Reis,Ciência da Computação,7º Período,Ponta Grossa,1234,1,3,1
+2830099,a02830099,RODRIGO DIAS ALVES,Rodrigo Dias,Engenharia Mecatrônica,5º Período,Ponta Grossa,1234,1,4,0
+2830100,a02830100,EDUARDO ALMEIDA VIEIRA,Eduardo Almeida,Engenharia Química,3º Período,Ponta Grossa,1234,1,4,2
+2828227,a02828227,MARCOS FRANCISCO FIGUEIREDO VELOSO, Marcos Francisco,Engenharia Elétrica, 2º Período,Ponta Grossa,1234,1,0,0
