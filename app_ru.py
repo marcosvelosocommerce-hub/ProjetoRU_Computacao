@@ -1,12 +1,16 @@
 import streamlit as st
 from datetime import datetime
-import sys, os
+import sys, os, html
 sys.path.insert(0, os.path.dirname(__file__))
 from db.database import (
     buscar_aluno_catraca, processar_acesso,
     get_log_acessos, get_stats_dia, get_todos_alunos,
-    get_cardapio, atualizar_cardapio
+    get_cardapio, atualizar_cardapio,
+    get_avaliacoes, get_media_por_prato
 )
+
+def esc(texto):
+    return html.escape(str(texto)) if texto else ""
 
 st.set_page_config(page_title="RU UTFPR — Terminal", page_icon="🏪", layout="wide", initial_sidebar_state="expanded")
 
@@ -179,6 +183,57 @@ def aba_relatorio():
         css = "log-ok" if "Liberado" in e["status"] else ("log-warn" if "Sem" in e["status"] else "log-err")
         hora = e["criado_em"][11:19]
         st.markdown(f'<div class="log-item {css}" style="margin-bottom:4px"><span><b>{e["nome_curto"]}</b> <span style="color:#888;font-size:12px">RA {e["ra_num"]}</span></span><span style="color:#555;font-size:13px">{e["turno"]} · {hora}</span><span>{e["status"]}</span></div>', unsafe_allow_html=True)
+
+    # ── Avaliações dos alunos ──
+    st.markdown('<br><br>', unsafe_allow_html=True)
+    st.markdown("#### ⭐ Avaliações dos Alunos")
+    avaliacoes = get_avaliacoes(200)
+    if not avaliacoes:
+        st.markdown('<p style="color:#aaa;text-align:center;padding:20px">Nenhuma avaliação registrada ainda.</p>', unsafe_allow_html=True)
+    else:
+        n = len(avaliacoes)
+        medias = {
+            "Qualidade":    sum(a["qualidade"]   or 0 for a in avaliacoes) / n,
+            "Atendimento":  sum(a["atendimento"] or 0 for a in avaliacoes) / n,
+            "Higiene":      sum(a["higiene"]     or 0 for a in avaliacoes) / n,
+            "Variedade":    sum(a["variedade"]   or 0 for a in avaliacoes) / n,
+        }
+        cm1, cm2, cm3, cm4 = st.columns(4)
+        for col, (label, val) in zip([cm1, cm2, cm3, cm4], medias.items()):
+            with col:
+                st.markdown(f'<div class="metrica-card"><div class="metrica-num">{val:.1f}⭐</div><div class="metrica-label">{label}</div></div>', unsafe_allow_html=True)
+
+        st.markdown('<br>', unsafe_allow_html=True)
+        st.markdown("##### 🍽️ Nota média por prato")
+        ranking = get_media_por_prato()
+        if ranking:
+            import pandas as pd
+            df = pd.DataFrame(ranking).set_index("prato")
+            st.bar_chart(df["media"], color="#6B3FA0")
+
+            melhor, pior = ranking[0], ranking[-1]
+            cb1, cb2 = st.columns(2)
+            with cb1:
+                st.success(f"🏆 Melhor avaliado: **{esc(melhor['prato'])}** — {melhor['media']}⭐ ({melhor['qtd']} avaliações)")
+            with cb2:
+                st.error(f"⚠️ Pior avaliado: **{esc(pior['prato'])}** — {pior['media']}⭐ ({pior['qtd']} avaliações)")
+        else:
+            st.markdown('<p style="color:#aaa;font-size:13px">Sem dados de prato suficientes ainda.</p>', unsafe_allow_html=True)
+
+        st.markdown('<br>', unsafe_allow_html=True)
+        st.markdown("##### 💬 Comentários recentes")
+        comentarios = [a for a in avaliacoes if a.get("comentario")]
+        if not comentarios:
+            st.markdown('<p style="color:#aaa;font-size:13px">Nenhum comentário escrito ainda.</p>', unsafe_allow_html=True)
+        for a in comentarios[:15]:
+            hora = a["criado_em"][11:16]
+            data = a["criado_em"][:10]
+            st.markdown(
+                f'<div class="log-item" style="margin-bottom:4px;flex-direction:column;align-items:flex-start;gap:2px">'
+                f'<span style="font-size:13px;color:#222">{esc(a["comentario"])}</span>'
+                f'<span style="color:#888;font-size:11px">{esc(a.get("turno") or "")} · {esc(a.get("prato") or "")} · {data} {hora}</span>'
+                f'</div>', unsafe_allow_html=True
+            )
 
 # ── ABA: ALUNOS ───────────────────
 def aba_alunos():

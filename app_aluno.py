@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from db.database import (
     login_aluno, get_saldo, get_historico_fichas,
     get_historico_refeicoes, comprar_fichas, salvar_avaliacao,
-    get_cardapio, get_aluno
+    get_cardapio, get_cardapio_dia, get_aluno
 )
 from agenteia import renderizar_agente_ia
 
@@ -158,7 +158,7 @@ def bottom_nav():
 def page_login():
     st.markdown('<div class="login-hero full-width"><div class="login-logo">UT<span>F</span>PR</div><div class="login-sub">Portal do Estudante</div></div>', unsafe_allow_html=True)
     st.markdown('<p style="font-size:15px;color:#333;margin-top:20px;font-weight:500;">Entrar na sua conta</p>', unsafe_allow_html=True)
-    ra    = st.text_input("RA", placeholder="a2828227", key="login_ra")
+    ra    = st.text_input("RA", placeholder="2828282", key="login_ra")
     senha = st.text_input("Senha", type="password", key="login_senha")
     st.markdown('<div class="btn-primary">', unsafe_allow_html=True)
     if st.button("Entrar", key="btn_login", use_container_width=True):
@@ -342,7 +342,17 @@ def page_avaliacao():
     if st.session_state.avaliacao_enviada:
         st.markdown('<div style="text-align:center;padding:48px 24px"><div style="font-size:64px;margin-bottom:16px">🏆</div><div style="font-size:18px;font-weight:600;color:#222;margin-bottom:8px">Obrigado pela avaliação!</div><div style="font-size:14px;color:#777">Sua opinião ajuda a melhorar o RU.</div></div>', unsafe_allow_html=True)
     else:
-        st.markdown("**Avalie sua refeição de hoje**")
+        turno_label = st.radio("Qual refeição você quer avaliar?", ["Almoço", "Jantar"], horizontal=True, key="turno_avaliacao")
+        turno_db = "almoco" if turno_label == "Almoço" else "jantar"
+
+        dia = dia_semana_pt()
+        dia = dia if dia in ["Seg","Ter","Qua","Qui","Sex"] else "Seg"
+        item_cardapio = get_cardapio_dia(dia, turno_db)
+        prato_atual = item_cardapio["prato_principal"] if item_cardapio else "Não informado"
+
+        st.markdown(f"<p style='color:#888;font-size:13px;margin-top:-4px'>Prato de hoje ({turno_label}): <b>{prato_atual}</b></p>", unsafe_allow_html=True)
+
+        st.markdown("**Avalie sua refeição**")
         notas = {}
         for asp, key in [("Qualidade da comida","qualidade"),("Atendimento","atendimento"),("Higiene","higiene"),("Variedade do cardápio","variedade")]:
             st.markdown(f'<p style="font-size:14px;color:#555;margin:12px 0 4px">{asp}</p>', unsafe_allow_html=True)
@@ -350,7 +360,7 @@ def page_avaliacao():
         comentario = st.text_area("Comentário (opcional)", placeholder="Sua opinião...", key="comentario")
         st.markdown('<div class="btn-primary">', unsafe_allow_html=True)
         if st.button("Enviar avaliação", key="btn_avaliar", use_container_width=True):
-            salvar_avaliacao(st.session_state.aluno["ra_num"], notas, comentario)
+            salvar_avaliacao(st.session_state.aluno["ra_num"], turno_label, prato_atual, notas, comentario)
             st.session_state.avaliacao_enviada = True; st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
     bottom_nav()
@@ -360,7 +370,7 @@ def page_placeholder(title, icon, msg):
     st.markdown(f'<div style="text-align:center;padding:64px 24px;color:#aaa"><div style="font-size:48px;margin-bottom:12px">{icon}</div><div style="font-size:15px">{msg}</div></div>', unsafe_allow_html=True)
     bottom_nav()
 
-# ── ROUTER ────────────────────────────────────────────────────────────────────
+# ── ROUTER ──────────────────
 if not st.session_state.logged_in:
     page_login()
 else:

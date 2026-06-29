@@ -86,6 +86,8 @@ def criar_tabelas():
         CREATE TABLE IF NOT EXISTS avaliacoes (
             id              INTEGER PRIMARY KEY AUTOINCREMENT,
             ra_num          TEXT NOT NULL,
+            turno           TEXT,
+            prato           TEXT,
             qualidade       INTEGER,
             atendimento     INTEGER,
             higiene         INTEGER,
@@ -94,6 +96,13 @@ def criar_tabelas():
             criado_em       TEXT NOT NULL DEFAULT (datetime('now','localtime'))
         );
         """)
+
+        # Migração leve: adiciona colunas novas se o banco já existia sem elas
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(avaliacoes)").fetchall()]
+        if "turno" not in cols:
+            conn.execute("ALTER TABLE avaliacoes ADD COLUMN turno TEXT")
+        if "prato" not in cols:
+            conn.execute("ALTER TABLE avaliacoes ADD COLUMN prato TEXT")
 
 
 # ─── SEED: DADOS INICIAIS (ATUALIZADO COM CARGA DE CSV E HASH) ──────────────
@@ -232,14 +241,39 @@ def comprar_fichas(ra_num: str, tipo: str, qtd: int, valor: float):
         )
 
 
-def salvar_avaliacao(ra_num: str, notas: dict, comentario: str):
-    """Registra avaliação do restaurante."""
+def salvar_avaliacao(ra_num: str, turno: str, prato: str, notas: dict, comentario: str):
+    """Registra avaliação do restaurante, com snapshot do turno e prato avaliados."""
     with get_conn() as conn:
         conn.execute(
-            "INSERT INTO avaliacoes (ra_num,qualidade,atendimento,higiene,variedade,comentario) VALUES (?,?,?,?,?,?)",
-            (ra_num.zfill(8), notas.get("qualidade"), notas.get("atendimento"),
+            "INSERT INTO avaliacoes (ra_num,turno,prato,qualidade,atendimento,higiene,variedade,comentario) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (ra_num.zfill(8), turno, prato, notas.get("qualidade"), notas.get("atendimento"),
              notas.get("higiene"), notas.get("variedade"), comentario)
         )
+
+
+def get_avaliacoes(limite: int = 200):
+    """Retorna as avaliações mais recentes."""
+    with get_conn() as conn:
+        rows = conn.execute(
+            "SELECT * FROM avaliacoes ORDER BY criado_em DESC LIMIT ?", (limite,)
+        ).fetchall()
+        return [dict(r) for r in rows]
+
+
+def get_media_por_prato():
+    """Nota média geral (média dos 4 critérios) agrupada por prato avaliado."""
+    with get_conn() as conn:
+        rows = conn.execute("""
+            SELECT prato,
+                   ROUND(AVG((qualidade + atendimento + higiene + variedade) / 4.0), 2) AS media,
+                   COUNT(*) AS qtd
+            FROM avaliacoes
+            WHERE prato IS NOT NULL AND prato != ''
+            GROUP BY prato
+            ORDER BY media DESC
+        """).fetchall()
+        return [dict(r) for r in rows]
 
 
 # ─── FUNÇÕES: CATRACA / RU ──────────────────────────
@@ -347,6 +381,16 @@ def get_cardapio(dia: str = None):
         else:
             rows = conn.execute("SELECT * FROM cardapio ORDER BY dia_semana, turno").fetchall()
         return [dict(r) for r in rows]
+
+
+def get_cardapio_dia(dia: str, turno: str):
+    """Retorna o item de cardápio de um dia/turno específico (ex.: 'Seg','almoco')."""
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT * FROM cardapio WHERE dia_semana=? AND turno=?",
+            (dia, turno)
+        ).fetchone()
+        return dict(row) if row else None
 
 
 def atualizar_cardapio(dia: str, turno: str, dados: dict):
