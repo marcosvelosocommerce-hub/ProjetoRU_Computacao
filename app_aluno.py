@@ -156,12 +156,95 @@ def bottom_nav():
 
 # ── PÁGINAS ──────────────────────────────────────────────────────────────────
 def page_login():
-    st.markdown('<div class="login-hero full-width"><div class="login-logo">UT<span>F</span>PR</div><div class="login-sub">Portal do Estudante</div></div>', unsafe_allow_html=True)
-    st.markdown('<p style="font-size:15px;color:#333;margin-top:20px;font-weight:500;">Entrar na sua conta</p>', unsafe_allow_html=True)
-    ra    = st.text_input("RA", placeholder="2828282", key="login_ra")
-    senha = st.text_input("Senha", type="password", key="login_senha")
-    st.markdown('<div class="btn-primary">', unsafe_allow_html=True)
-    if st.button("Entrar", key="btn_login", use_container_width=True):
+    st.markdown("""
+    <style>
+    /* 1. Fundo da página inteira escuro */
+    .stApp { 
+        background-color: #2b2b2b !important; 
+    }
+    
+    /* 2. Oculta o menu/header superior padrão do Streamlit */
+    header { visibility: hidden; }
+    
+    /* 3. Container do Card de Login */
+    .block-container { 
+        background-color: #1c1c1e !important; 
+        padding: 3rem 2rem !important; 
+        border-radius: 16px !important;
+        max-width: 400px !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important;
+        margin-top: 8vh !important; 
+    }
+    
+    /* 4. Estilo das caixas de texto (Inputs) */
+    div[data-testid="stTextInput"] label p { color: #aaaaaa !important; font-size: 13px !important; padding-bottom: 2px; }
+    div[data-testid="stTextInput"] input { 
+        background-color: #2a2a2a !important; 
+        border: 1px solid #444444 !important; 
+        color: #ffffff !important; 
+        border-radius: 8px !important;
+    }
+    div[data-testid="stTextInput"] input:focus { border-color: #F4A100 !important; }
+    
+    /* 5. Estilo do Checkbox */
+    div[data-testid="stCheckbox"] label p { color: #aaaaaa !important; font-size: 14px !important; }
+    
+    /* 6. Estilo base dos Botões */
+    div[data-testid="stButton"] button {
+        width: 100% !important;
+        font-weight: bold !important;
+        border-radius: 8px !important;
+        padding: 8px 0 !important;
+        margin-top: 10px !important;
+    }
+    
+    /* Botão ENTRAR (Roxo) */
+    div[data-testid="stButton"] button[kind="primary"] {
+        background-color: #6B3FA0 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+    
+    /* Fallback geral para botões secundários */
+    div[data-testid="stButton"] button[kind="secondary"] {
+        background-color: transparent !important;
+        border: 2px solid #555 !important;
+        color: #fff !important;
+    }
+    
+    /* Cores das bordas de Biometria e Recuperar Senha */
+    div.element-container:has(.anchor-bio) + div.element-container button {
+        border-color: #F4A100 !important;
+        color: #F4A100 !important;
+    }
+    
+    div.element-container:has(.anchor-rec) + div.element-container button {
+        border-color: #EF5350 !important;
+        color: #EF5350 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    # SIGLA UTFPR APENAS COMO TEXTO LIMPO
+    st.markdown("""
+    <div style="text-align: center; margin-bottom: 2.5rem; user-select: none;">
+        <div style="font-family: 'Arial Black', sans-serif; font-size: 56px; font-weight: 900; letter-spacing: -2px; color: #ffffff; line-height: 1;">
+            UTF<span style="color: #F4A100;">PR</span>
+        </div>
+        <div style="color: #999999; font-size: 9px; text-transform: uppercase; margin-top: 12px; letter-spacing: 0.8px; font-family: Arial, sans-serif;">
+            Universidade Tecnológica Federal do Paraná
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # CAMPOS DE LOGIN
+    ra = st.text_input("R.A", placeholder="Insira o seu R.A")
+    senha = st.text_input("Senha", placeholder="Insira a sua Senha", type="password")
+    
+    permanecer = st.checkbox("Permanecer conectado")
+    
+    # BOTÃO PRINCIPAL (Roxo)
+    if st.button("ENTRAR", type="primary", use_container_width=True):
         aluno = login_aluno(ra.strip(), senha)
         if aluno:
             st.session_state.logged_in = True
@@ -170,7 +253,15 @@ def page_login():
             st.rerun()
         else:
             st.error("RA ou senha inválidos.")
-    st.markdown('</div>', unsafe_allow_html=True)
+        
+    # BOTÕES SECUNDÁRIOS (Bordas coloridas)
+    st.markdown('<span class="anchor-bio" style="display:none;"></span>', unsafe_allow_html=True)
+    if st.button("ENTRAR COM BIOMETRIA", use_container_width=True):
+        st.toast("Autenticação por biometria cancelada", icon="❌")
+        
+    st.markdown('<span class="anchor-rec" style="display:none;"></span>', unsafe_allow_html=True)
+    if st.button("RECUPERAR SENHA", use_container_width=True):
+        st.info("Função de recuperação de senha em breve.")
     
 
 def page_carteirinha():
