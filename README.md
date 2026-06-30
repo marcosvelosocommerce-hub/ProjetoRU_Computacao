@@ -12,9 +12,10 @@ projeto/
 ├── app_ru.py            # Terminal do funcionário do RU (catraca, relatórios, gestão)
 ├── agenteia.py           # Chatbot "Minerva" (assistente de IA via Gemini)
 ├── db/
-│   └── database.py      # Camada de dados — SQLite, regras de negócio, seed inicial
+    └── database.py      # Camada de dados — SQLite, regras de negócio, seed inicial
+    └── utfpr.db               # Banco SQLite gerado automaticamente (não versionar)
 ├── alunos.csv            # Base inicial de alunos (carga automática no 1º start)
-└── utfpr.db               # Banco SQLite gerado automaticamente (não versionar)
+
 ```
 
 > ⚠️ Os imports usam `from db.database import ...`, portanto **`database.py` deve estar dentro de uma pasta `db/`**, na mesma raiz dos dois apps.
