@@ -97,7 +97,7 @@ def sidebar():
 # ── ABA: CATRACA ─────────────────────────
 def aba_catraca():
     st.markdown(f"## 🚪 Terminal da Catraca")
-    st.markdown(f"<p style='color:#888;margin-top:-12px'>🕐 {datetime.now().strftime('%d/%m/%Y  %H:%M:%S')} &nbsp;·&nbsp; Campus Ponta Grossa</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color:#888;margin-top:-12px'>🕐 {datetime.now().strftime('%d/%m/%Y  %H:%M')} &nbsp;·&nbsp; Campus Ponta Grossa</p>", unsafe_allow_html=True)
 
     col_esq, col_dir = st.columns([1.2,1], gap="large")
     with col_esq:
